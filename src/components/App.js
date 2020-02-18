@@ -37,7 +37,7 @@ class App extends Component {
         <Router>
           <Fragment>
             <LoadingBar />
-            <div className='container' style={{"color":this.state.color.color}}>
+            <div className='container' style={{"background":this.state.color.color}}>
               <Nav />
               {this.props.loading === true
                 ? null
