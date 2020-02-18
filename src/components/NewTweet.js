@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddTweet } from '../actions/tweets'
 import { Redirect } from 'react-router-dom';
+import ColorModeContext from "../context/colorMode"
 
 class NewTweet extends Component {
   state = {
@@ -28,7 +29,9 @@ class NewTweet extends Component {
       toHome: id ? false : true,
     }))
   }
-  render() {
+  static contextType = ColorModeContext
+    render() {
+        let  color = this.context;
     const { text, toHome } = this.state
 
     if ( toHome === true ) {
@@ -42,6 +45,7 @@ class NewTweet extends Component {
         <h3 className='center'>Compose new Tweet</h3>
         <form className='new-tweet' onSubmit={this.handleSubmit}>
           <textarea
+            style={{"background":color.colorMode,"color":color.color}}
             placeholder="What's popaing?"
             value={text}
             onChange={this.handleChange}
@@ -54,6 +58,7 @@ class NewTweet extends Component {
             </div>
           )}
           <button
+            style={{"background":color.colorMode,"color":color.color}}
             className='btn'
             type='submit'
             disabled={text === ''}>
