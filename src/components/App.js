@@ -8,6 +8,7 @@ import NewTweet from './NewTweet';
 import TweetPage from './TweetPage';
 import Nav from './Nav';
 import ColorModeContext from "../context/colorMode"
+import ColorModeSwitchContext from "../context/colorModeSwitch"
 
 class App extends Component {
   constructor(props) {
@@ -17,28 +18,42 @@ class App extends Component {
        lightColor:"#03A9F4",
        lightOpacity:"#03a9f47a",
        light:"white",
-       darkColor:"#03A9F4",
-       darkOpacity:"#03a9f47a",
-       dark:"white",
+       darkColor:"white",
+       darkOpacity:"#ffffff78",
+       dark:"black",
        color:{
          color:"#03A9F4",
          colorOpacity:"#03a9f47a",
          colorMode:"white",
-        }
+        },
+      isDark:false
     }
   }
   
   componentDidMount() {
     this.props.dispatch(handleInitialData())
   }
+  changeColorMode=()=>{
+    this.setState((state, props) => { return { 
+      ...state,
+      color:{
+        color:state.isDark ? state.darkColor : state.lightColor,
+        colorOpacity:state.isDark ? state.darkOpacity : state.lightOpacity,
+        colorMode:state.isDark ? state.dark : state.light,
+       },
+       isDark:!state.isDark
+     }})
+  }
   render() {
     return (
+      
+      <ColorModeSwitchContext.Provider value={this.changeColorMode}>
       <ColorModeContext.Provider value={this.state.color}>
         <Router>
           <Fragment>
             <LoadingBar />
-            <div className='container' style={{"background":this.state.color.color}}>
-              <Nav />
+            <div className='container' style={{"background":this.state.color.colorMode}}>
+              <Nav color={this.state.color}/>
               {this.props.loading === true
                 ? null
                 : <div>
@@ -50,6 +65,7 @@ class App extends Component {
           </Fragment>
         </Router>
       </ColorModeContext.Provider>
+      </ColorModeSwitchContext.Provider>
       )
   }
 }

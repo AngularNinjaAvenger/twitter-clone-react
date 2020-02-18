@@ -62,7 +62,7 @@ class Tweet extends Component {
                         <p style={{"color":color.color}}>{text}</p>
                     </div>
                     <div className='tweet-icons'>
-                        <TiArrowBackOutline color="#03A9F4" className='tweet-icon' />
+                        <TiArrowBackOutline color={color.color} className='tweet-icon' />
                         <span>{replies !== 0 && replies}</span>
                         <button className='heart-button' onClick={this.handleLike}>
                             {hasLiked === true

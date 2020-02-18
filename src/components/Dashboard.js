@@ -5,7 +5,7 @@ import ColorModeContext from "../context/colorMode"
 class Dashboard extends Component {
     static contextType = ColorModeContext
     render() {
-        let  color = this.context.colorMode;
+        let  color = this.context.color;
         return(
             <div>
                 <h3 className='center' style={{"color":color}} > Your Timeline </h3>
