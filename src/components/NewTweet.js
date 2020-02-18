@@ -60,7 +60,7 @@ class NewTweet extends Component {
           <button
             style={{"background":color.colorMode,"color":color.color}}
             className='btn'
-            type='submit'
+            type='posts'
             disabled={text === ''}>
               Submit
           </button>
