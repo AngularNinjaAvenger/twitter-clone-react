@@ -171,6 +171,10 @@ li {
 .center{
   color: #03A9F4;
 }
+
+.tweet-icons > span{
+  color: #03A9F4;
+}
 .container{
     background: #03A9F4;
 }
