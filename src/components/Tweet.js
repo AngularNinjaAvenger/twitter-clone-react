@@ -6,6 +6,8 @@ import { TiHeartOutline } from 'react-icons/ti/index';
 import { TiHeartFullOutline } from 'react-icons/ti/index';
 import { handleToggleTweet } from '../actions/tweets';
 import { Link, withRouter } from 'react-router-dom';
+import ColorModeContext from "../context/colorMode"
+
 
 class Tweet extends Component {
 
@@ -25,8 +27,10 @@ class Tweet extends Component {
         e.preventDefault();
         this.props.history.push(`tweet/${id}`);
     }
-
+    static contextType = ColorModeContext
     render() {
+        let  color = this.context;
+        
         const { tweet } = this.props;
 
         if (tweet === null) {
@@ -38,7 +42,7 @@ class Tweet extends Component {
         } = tweet;
 
         return(
-            <Link to={`/tweet/${id}`} className='tweet'>
+            <Link to={`/tweet/${id}`} className='tweet' style={{"background":color.colorMode}}>
                 <img 
                     src={avatar}
                     alt={`Avatart of ${name}`}
@@ -46,25 +50,27 @@ class Tweet extends Component {
                 />
                 <div className='tweet-info'>
                     <div>
-                        <span>{name}</span>
-                        <div> {formatDate(timestamp)} </div>
+                        <span style={{"color":color.color}}>{name}</span>
+                        <div style={{"color":color.colorOpacity}}> {formatDate(timestamp)} </div>
                         {parent && (
-                            <button className='replying-to' onClick={(e) => this.toParent(e, parent.id)}>
+                            <button 
+                                style={{"color":color.colorOpacity}}
+                                className='replying-to' onClick={(e) => this.toParent(e, parent.id)}>
                                 Replying to @{parent.author}
                             </button>
                         )}
-                        <p>{text}</p>
+                        <p style={{"color":color.color}}>{text}</p>
                     </div>
                     <div className='tweet-icons'>
                         <TiArrowBackOutline color="#03A9F4" className='tweet-icon' />
                         <span>{replies !== 0 && replies}</span>
                         <button className='heart-button' onClick={this.handleLike}>
                             {hasLiked === true
-                                ? <TiHeartFullOutline color='#03A9F4' className='tweet-icon' />
-                                : <TiHeartOutline color='#03A9F4' className='tweet-icon' />
+                                ? <TiHeartFullOutline color={color.color} className='tweet-icon' />
+                                : <TiHeartOutline color={color.color} className='tweet-icon' />
                             }
                         </button>
-                        <span> {likes !== 0 && likes} </span>
+                        <span style={{"color":color.colorOpacity}} > {likes !== 0 && likes} </span>
                     </div>
                 </div>
             </Link>
