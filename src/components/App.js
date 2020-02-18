@@ -16,14 +16,15 @@ class App extends Component {
     this.state = {
        lightColor:"#03A9F4",
        lightOpacity:"#03a9f47a",
-       lightDark:"white",
+       light:"white",
        darkColor:"#03A9F4",
        darkOpacity:"#03a9f47a",
+       dark:"white",
        color:{
-        color:this.state.lightColor,
-        colorOpacity:this.state.darkColor,
-        colorMode:this.state.lightDark,
-       }
+         color:"#03A9F4",
+         colorOpacity:"#03a9f47a",
+         colorMode:"white",
+        }
     }
   }
   
@@ -36,7 +37,7 @@ class App extends Component {
         <Router>
           <Fragment>
             <LoadingBar />
-            <div className='container'>
+            <div className='container' style={{"color":this.state.color.color}}>
               <Nav />
               {this.props.loading === true
                 ? null

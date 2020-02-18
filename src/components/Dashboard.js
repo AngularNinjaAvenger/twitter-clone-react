@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Tweet from './Tweet';
-
+import ColorModeContext from "../context/colorMode"
 class Dashboard extends Component {
+    static contextType = ColorModeContext
     render() {
+        let  color = this.context.colorMode;
         return(
             <div>
-                <h3 className='center'> Your Timeline </h3>
+                <h3 className='center' style={{"color":color}} > Your Timeline </h3>
                 <ul className='dashboard-list'>
                     {this.props.tweetIds.map((id) => (
                         <li key={id}>
