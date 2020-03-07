@@ -1,5 +1,5 @@
 import SearchInput from './SearchInput';
-
+import MockSuggestions from "../MockSuggestionData.json"
 import React, { Component } from 'react'
 
 export default class Search extends Component {
@@ -8,7 +8,7 @@ export default class Search extends Component {
         super(props)
     
         this.state = {
-             value:"testing"
+             value:"",
         }
     }
     onChange=(value)=>{
@@ -26,8 +26,15 @@ export default class Search extends Component {
             {
                 this.state.value.length ? (
                     <div className="suggestions">
-                        suggestion
-                    </div>
+                        {
+                            MockSuggestions.map((item,idx)=>{
+                                if (item.toLowerCase().indexOf(this.state.value.toLowerCase()) > -1){
+                                    return <li key={idx} className="suggestion">{item}</li>
+                                }
+                                
+                            })
+                        }
+                        </div>
                 ):""
             }
 
