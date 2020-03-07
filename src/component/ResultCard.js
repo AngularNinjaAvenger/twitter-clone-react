@@ -17,4 +17,4 @@ function ResultCard() {
     )
 }
 
-export default Card;
+export default ResultCard;
