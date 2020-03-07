@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Nav from './component/nav/Nav'
 import "./index.css"
 import Search from './component/Search'
-import SearchInput from './component/SearchInput'
+
 
 export default class SearchPage extends Component {
     render() {

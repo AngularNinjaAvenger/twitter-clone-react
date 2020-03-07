@@ -1,3 +1,7 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .container{
     padding-top: 100px;
     display: flex;
@@ -25,7 +29,6 @@
     border: 1px solid #00000096;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 6px 5px 12px 0px #949292;
 }
 
 .search-container  input {
@@ -99,4 +102,12 @@
     display:flex;
     flex-direction:row;
     justify-content: space-between;
+}
+
+.tabs{
+    display:flex;
+    width: 400px;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0px;
 }
