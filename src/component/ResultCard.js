@@ -4,11 +4,11 @@ function ResultCard(props) {
     const {url,title,description,date} = props.data;
     return (
         <div className="card-container">
-            <span className="result-link">{url.replace("searchwod",props.swapterm)}</span>
-            <a className="result-title" href="">{title.replace("searchwod",props.swapterm)}</a>
+            <span className="result-link">{url}</span>
+            <a className="result-title" href="">{title}</a>
             <div className="description-container">
-                <span className="date">{date.replace("searchwod",props.swapterm)}</span> :
-                <span className="description">{description.replace("searchwod",props.swapterm)}</span>
+                <span className="date">{date}</span> :
+                <span className="description">{description}</span>
             </div>
         </div>
     )

@@ -8,7 +8,7 @@ import MockSuggestions from "../MockSuggestionData.json"
 function SearchInput(props) {
 
 
-    return <React.Fragment>
+    return <div className="input-sug-wapper">
             <div className="search-container">
                 <input type="text"  onChange={(e)=>props.onChange(e.target.value)}/>
                     <div className="search-mic">
@@ -30,9 +30,7 @@ function SearchInput(props) {
                             {
                                 MockSuggestions.map((item,idx)=>{
                                     if (item.toLowerCase().indexOf(props.value.toLowerCase()) > -1){
-                                        return <li key={idx} className="suggestion" onClick={()=>{
-                                            return <Redirect to={{ pathname: '/result', query: { term: item } }} />
-                                        }}>{item}</li>
+                                        return <li key={idx} className="suggestion" onClick={props.redirect}>{item}</li>
                                     }
                                     
                                 })
@@ -40,7 +38,7 @@ function SearchInput(props) {
                             </div>
                     ):""
                 }
-            </React.Fragment>
+            </div>
 }
 
 export default SearchInput;

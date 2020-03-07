@@ -118,6 +118,14 @@ body{
     text-decoration: none;
 }
 
+.input-sug-wapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
 .description-container{
     display: block;
     font-size: 14px;
@@ -149,7 +157,10 @@ body{
     font-weight: bolder;
     margin: 5px 0px;
     cursor:pointer;   
+    position:abosolute;
+    top:50px;
 }
+
 
 ::-webkit-scrollbar {
     width: 7.6px; 
