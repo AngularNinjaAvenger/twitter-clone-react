@@ -8,24 +8,31 @@ export default class ResultPage extends Component {
         super(props)
     
         this.state = {
-             result:[]
+             result:[],
+             redirect:false
         }
     }
     componentDidMount() {
 
-        console.log();
         this.setState({ result });
+        
+        if(this.props.location.query){
+            this.setState({
+                term:this.props.location.query.term
+            })
+        }else{
+            this.setState({
+                redirect:true
+            })
+        }
     }
     render() {
-        try{
-            const term = this.props.location.query.term;
-        }catch(e){
-            return <Redirect to="/" />;
-        }
+        console.log(this.state.term,"<--- from result page")
         return (
             <div>
-                <ResultHeader />
-                {this.state.result.map((item,idx)=><ResultCard swapterm={term} key={idx} data={result} />)}
+            {this.state.redirect ?  <Redirect to="/" /> : ""}
+            <ResultHeader />
+                {this.state.result.map((item,idx)=><ResultCard swapterm={this.state.term} key={idx} data={item} />)}
             </div>
         )
     }

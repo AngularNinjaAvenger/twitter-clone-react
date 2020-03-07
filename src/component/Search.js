@@ -18,8 +18,12 @@ export default class Search extends Component {
         this.setState({ value });
     }
     
-    redirect=()=>{
-        this.setState({ redirect:true })
+    redirect=(item)=>{
+
+        this.setState({ 
+            redirect:true,
+            value:item ? item : this.state.value
+        })
     }
 
     render() {
@@ -37,7 +41,7 @@ export default class Search extends Component {
                         {
                             MockSuggestions.map((item,idx)=>{
                                 if (item.toLowerCase().indexOf(this.state.value.toLowerCase()) > -1){
-                                    return <li key={idx} className="suggestion" onClick={this.redirect}>{item}</li>
+                                    return <li key={idx} className="suggestion" onClick={this.redirect(item)}>{item}</li>
                                 }
                                 
                             })
