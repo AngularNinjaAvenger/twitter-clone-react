@@ -4,9 +4,9 @@ import './index.css';
 import Routes from './Routes';
 
 import {BrowserRouter} from 'react-router-dom'
-	const Routes = (
+	const routes = (
 	    <BrowserRouter>
-	    <Routes />
+                <Routes />
 	    </BrowserRouter>
 	)
-ReactDOM.render(Routes, document.getElementById('root'));
+ReactDOM.render(routes, document.getElementById('root'));
