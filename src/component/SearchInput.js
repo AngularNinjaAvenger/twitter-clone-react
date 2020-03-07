@@ -2,9 +2,9 @@ import React from 'react';
 import { MdMic,MdSearch } from 'react-icons/all'
 
 
-function SearchInput() {
+function SearchInput(props) {
     return <div className="search-container">
-                <input type="text" />
+                <input type="text" value={props.value} onChange={props.onChange}/>
                 <div className="search-mic">
                     <MdMic 
                         color={"gray"} 
