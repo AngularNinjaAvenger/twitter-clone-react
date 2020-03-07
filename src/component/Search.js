@@ -24,11 +24,11 @@ export default class Search extends Component {
             
             <SearchInput onChange={this.onChange} value={this.state.value} />
             {
-                this.state.value.length && (
+                this.state.value.length ? (
                     <div className="suggestions">
                         suggestion
                     </div>
-                )
+                ):""
             }
 
         </div>
