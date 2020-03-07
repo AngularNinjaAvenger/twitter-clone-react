@@ -1,6 +1,7 @@
 import SearchInput from './SearchInput';
 import MockSuggestions from "../MockSuggestionData.json"
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom';
 
 export default class Search extends Component {
 
@@ -9,11 +10,18 @@ export default class Search extends Component {
     
         this.state = {
              value:"",
-        }
+             redirect:false
+
+            }
     }
     onChange=(value)=>{
         this.setState({ value });
     }
+    
+    redirect=()=>{
+        this.setState({ redirect:true })
+    }
+
     render() {
         return (
             <div className="container">
@@ -22,14 +30,14 @@ export default class Search extends Component {
                 <img src={process.env.PUBLIC_URL + "/google-home-logo.png"} alt="google-icon" />
             </div>
             
-            <SearchInput onChange={this.onChange} value={this.state.value} />
+            <SearchInput onChange={this.onChange} value={this.state.value} redirect={this.redirect}/>
             {
                 this.state.value.length ? (
                     <div className="suggestions">
                         {
                             MockSuggestions.map((item,idx)=>{
                                 if (item.toLowerCase().indexOf(this.state.value.toLowerCase()) > -1){
-                                    return <li key={idx} className="suggestion">{item}</li>
+                                    return <li key={idx} className="suggestion" onClick={this.redirect}>{item}</li>
                                 }
                                 
                             })
@@ -37,7 +45,7 @@ export default class Search extends Component {
                         </div>
                 ):""
             }
-
+            {this.state.redirect ? <Redirect to={{ pathname: '/result', query: { term: this.state.value } }} />:""}
         </div>
         )
     }

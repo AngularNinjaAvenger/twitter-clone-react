@@ -13,19 +13,7 @@ function SearchInput(props) {
                         size={"2rem"} />
                 </div>
                 <div 
-                    onClick={()=>{
-                        console.log(props)
-                        return
-                        console.log(props.value)
-                        if(props.value.length > 0){
-                            return (
-                                <Redirect 
-                                from={props.match.path}            
-                                to={{ pathname: '/result', query: { search: props.value } }}
-                            />
-                            )
-                        }
-                    }}
+                    onClick={()=>{props.redirect()}}
                     className="search-button">
                     <MdSearch 
                         color={"white"} 
