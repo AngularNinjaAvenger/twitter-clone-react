@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Card() {
+function ResultCard() {
     return (
         <div className="card-container">
             <span className="result-link">http:\\www.google.com/lattest-news</span>

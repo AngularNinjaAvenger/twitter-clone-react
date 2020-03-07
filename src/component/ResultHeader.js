@@ -1,7 +1,7 @@
 import React from 'react';
 import ResultNav from './ResultNav';
-import SearchInput from './SearchButon';
 import Item from './list-item/item';
+import SearchInput from './SearchInput';
 
 function ResultHeader() {
     return (
