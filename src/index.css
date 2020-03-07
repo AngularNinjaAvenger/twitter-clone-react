@@ -150,6 +150,20 @@ body{
     cursor:pointer;   
 }
 
+::-webkit-scrollbar {
+    width: 7.6px; 
+    height: 4px; 
+    background: white;
+    border-color:white;
+    border-radius:0px;
+    margin-right:6px;
+ }
+::-webkit-scrollbar-thumb {
+     background-color: #1b7fff; 
+     border:0.2px solid white;
+     -webkit-border-radius: 1ex; 
+    }
+
 
 @media only screen and (min-width: 320px) and (max-width: 479px){ 
     .search-mic{
