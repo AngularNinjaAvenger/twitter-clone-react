@@ -1,5 +1,6 @@
 import React from 'react'
 import "./nav.css"
+import Item from '../list-item/item'
 
 export default function Nav() {
     return (
@@ -7,8 +8,8 @@ export default function Nav() {
             <nav className="left-nav">
                 H
                 <ul>
-                    <li><a href="">all</a></li>
-                    <li><a href="">home</a></li>
+                    <Item text="all" />
+                    <Item text="home" />
                 </ul>
             </nav>
 
