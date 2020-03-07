@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import Nav from './component/nav/Nav'
-import "./index.css"
-import Search from './component/Search'
+import Nav from './nav/Nav'
+import Search from './Search'
 
 
 export default class SearchPage extends Component {
@@ -9,7 +8,6 @@ export default class SearchPage extends Component {
         return (
             <div>
                 <Nav />
-                <searchContainer />
                 <Search />
             </div>
         )

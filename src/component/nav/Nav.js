@@ -1,12 +1,15 @@
 import React from 'react'
 import "./nav.css"
 import Item from '../list-item/item'
+import {MdMenu,MdGridOn,
+    MdPersonOutline,
+    } from 'react-icons/all'
 
 export default function Nav() {
     return (
         <header>
             <nav className="left-nav">
-                H
+                <MdMenu color={"#1b7fff"} size={"2rem"} />
                 <ul>
                     <Item text="all" />
                     <Item text="home" />
@@ -14,11 +17,11 @@ export default function Nav() {
             </nav>
 
             <nav className="right-nav">
-                <div>O</div>
-                <div>O</div>
-                <div>O</div>
+                <div><MdGridOn color={"#1b7fff"} size={"2rem"} /></div>
+                <div><MdPersonOutline color={"#1b7fff"} size={"2rem"} /></div>
             </nav>
-
+            
         </header>
     )
 }
+

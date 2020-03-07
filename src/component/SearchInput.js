@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SearchButon() {
+function SearchInput() {
     return <div className="search-container">
         <input type="text" />
         <div className="search-mic">M</div>
@@ -8,4 +8,4 @@ function SearchButon() {
     </div>;
 }
 
-export default SearchButon;
+export default SearchInput;
