@@ -7,7 +7,7 @@ import {MdMenu,MdGridOn,
 
 export default function Nav() {
     return (
-        <header>
+        <header className="nav-header">
             <nav className="left-nav">
                 <MdMenu color={"#1b7fff"} size={"2rem"} />
                 <ul>
