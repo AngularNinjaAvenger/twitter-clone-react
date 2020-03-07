@@ -11,11 +11,9 @@ export default class Search extends Component {
              value:""
         }
     }
-    onChange=(e)=>{
-        console.log(e.target.value,"<---")
-        // this.setState({
-        //     value:e.targe.value
-        // })
+    onChange=(value)=>{
+        this.setState({ value });
+        console.log(this.state.value)
     }
     render() {
         return (
