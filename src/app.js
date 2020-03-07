@@ -9,7 +9,7 @@ export default class app extends Component {
         return (
             <BrowserRouter>
                 <Route path='/' exact component={SearchPage} />
-                <Route path='/result' exact component={ResultPage} />
+                <Route path='/result' component={ResultPage} />
             </BrowserRouter>
         )
     }

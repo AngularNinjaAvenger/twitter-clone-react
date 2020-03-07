@@ -15,7 +15,15 @@ export default class ResultPage extends Component {
     componentDidMount() {
 
         this.setState({ result });
-        
+        console.log(this.props)
+        const query =  new URLSearchParams(this.props.location.search)
+            const obj = {}
+            for(let i of query.entries()){
+                //this i here is [key,value]
+                obj[i[0]]=obj[i[1]]
+            }
+            console.log(obj)
+            return
         if(this.props.location.query){
             this.setState({
                 term:this.props.location.query.term

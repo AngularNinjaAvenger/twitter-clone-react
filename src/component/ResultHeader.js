@@ -1,13 +1,33 @@
-import React from 'react';
 import ResultNav from './ResultNav';
 import Item from './list-item/item';
 import SearchInput from './SearchInput';
 
-function ResultHeader() {
-    return (
-        <header className="result-header">
-            <ResultNav />
-            <SearchInput />
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom';
+
+class ResultHeader extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             value:"",
+             redirect:false
+
+            }
+    }
+    onChange=(value)=>{
+        this.setState({ value });
+    }
+    
+    redirect=()=>{
+        this.setState({ redirect:true })
+    }
+    render() {
+        return (
+            <header className="result-header">
+                <ResultNav />
+                {this.state.redirect ? <Redirect to={{ pathname: `/result/?term=${this.state.value}`, query: { term: this.state.value } }} />:""}
+                <SearchInput onChange={this.onChange} value={this.state.value} redirect={this.redirect}/>
                 <div className="tabs">
                     {
                         ["All","Images","News","Videos","Maps"].map(
@@ -16,8 +36,11 @@ function ResultHeader() {
                                     </div>)
                     }
                 </div>
-        </header>
-    )
+            </header>
+        )
+    }
 }
 
-export default ResultHeader;
+export default ResultHeader
+
+
