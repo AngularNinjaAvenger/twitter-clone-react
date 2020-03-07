@@ -14,11 +14,16 @@ function SearchInput(props) {
                 </div>
                 <div 
                     onClick={()=>{
-                        if(!props.value.length == " "){
-                            <Redirect 
-                                from={this.props.match.path}            
+                        console.log(props)
+                        return
+                        console.log(props.value)
+                        if(props.value.length > 0){
+                            return (
+                                <Redirect 
+                                from={props.match.path}            
                                 to={{ pathname: '/result', query: { search: props.value } }}
                             />
+                            )
                         }
                     }}
                     className="search-button">
