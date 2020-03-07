@@ -27,3 +27,7 @@
     border-left: 0px;
     border-right: 0px;
 }
+
+.pointed-cursor{
+    cursor:pointer;
+}

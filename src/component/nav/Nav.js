@@ -17,8 +17,8 @@ export default function Nav() {
             </nav>
 
             <nav className="right-nav">
-                <div><MdGridOn color={"#1b7fff"} size={"2rem"} /></div>
-                <div><MdPersonOutline color={"#1b7fff"} size={"2rem"} /></div>
+                <div className="pointed-cursor"><MdGridOn color={"#1b7fff"} size={"2rem"} /></div>
+                <div className="pointed-cursor"><MdPersonOutline color={"#1b7fff"} size={"2rem"} /></div>
             </nav>
             
         </header>

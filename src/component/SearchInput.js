@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdMic } from 'react-icons/all'
+import { MdMic,MdSearch } from 'react-icons/all'
 
 
 function SearchInput() {
@@ -10,9 +10,14 @@ function SearchInput() {
                         color={"gray"} 
                         size={"2rem"} />
                 </div>
-                <div className="search-button">S</div>
+                <div className="search-button">
+                    <MdSearch 
+                        color={"white"} 
+                        size={"2rem"} />
+                </div>
             </div>;
 }
 
 export default SearchInput;
+
 

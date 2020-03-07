@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { FaHamburger } from 'react-icons/fa'
 
-import SearchPage from './component/SeachPage'
+import ResultPage from './component/ResultPage'
 export default class app extends Component {
     render() {
         return (
             <div>
-                <SearchPage />
+                <ResultPage />
             </div>
         )
     }

@@ -1,24 +1,11 @@
 import React, { Component } from 'react'
-import "./index.css"
-import ResultHeader from './component/ResultHeader'
-import Card from './component/Card'
+import ResultHeader from './ResultHeader'
 
 export default class ResultPage extends Component {
     render() {
         return (
             <div>
                 <ResultHeader />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
             </div>
         )
     }

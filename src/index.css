@@ -155,6 +155,10 @@ body{
         flex-grow:3;
         width:0px;
     }
+    
+    .search-button{
+        width:60px;
+    } 
 }
 @media only screen and (min-width: 768px){ 
 
@@ -163,7 +167,7 @@ body{
     }
     
     .search-button{
-        width:80px;
+        width:70px;
     } 
 
     .search-container {
@@ -176,4 +180,14 @@ body{
         box-shadow: -20px -2px 0px 0px #ffffff;
         margin: -13px 3px;
     }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){ 
+    .search-button{
+        flex-grow:3;
+        width:0px;
+    }
+    
+    .search-button{
+        width:10px;
+    } 
 }
