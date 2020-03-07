@@ -5,16 +5,15 @@ import Item from './list-item/item';
 
 function ResultHeader() {
     return (
-        <header>
+        <header className="result-header">
             <ResultNav />
             <SearchInput />
                 <div className="tabs">
                     {
                         ["All","Images","News","Videos","Maps"].map(
-                            (item,idx)=>
-                                <div>
-                                    <Item text={item} index={idx}/>
-                                </div>)
+                        (item,idx)=> <div>
+                                        <Item text={item} index={idx}/>
+                                    </div>)
                     }
                 </div>
         </header>

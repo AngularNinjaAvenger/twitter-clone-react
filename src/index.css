@@ -1,5 +1,8 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
 }
 
 .container{
@@ -25,10 +28,11 @@ body{
     align-items: center;
     width: 100%;
     background: white;
-    height: 50px;
+    height: 40px;
     border: 1px solid #00000096;
     border-radius: 20px;
     overflow: hidden;
+    margin: 10px 0px;
 }
 
 .search-container  input {
@@ -59,6 +63,74 @@ body{
     cursor: pointer;
 }
 
+
+
+
+/* NAV */
+
+.result-header{
+    padding:10px 10px 0px 10px;
+    box-shadow: -1px 1px 20px 0px #949292;
+}
+
+
+.result-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.tabs{
+    display:flex;
+    width: 400px;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0px;
+}
+
+.result-img{
+    width: 113px;
+    height: 39px;
+}
+
+
+.card-container {
+    box-shadow: 1px 1px 5px 2px #949292;
+    margin: 11px 3px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.result-link{
+        display: block;
+        font-size: 14px;
+        color: lightgray;
+        margin: 10px 0px;
+        
+}
+
+.result-title{
+    display: block;
+    font-size: 21px;
+    text-decoration: none;
+}
+
+.description-container{
+    display: block;
+    font-size: 14px;
+    color: lightgray;
+    margin: 10px 0px;
+}   
+.description{
+    color:black;
+}
+
+.date{
+    padding-right:5px;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 479px){ 
     .search-mic{
         flex-grow: 100;
@@ -70,7 +142,9 @@ body{
         width: 200px;
         height: 70px;
     }
-
+    .tabs{
+        width:100%;
+    }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px){ 
@@ -93,21 +167,4 @@ body{
         margin: 0px auto;
     }
 
-}
-
-
-/* NAV */
-
-.result-nav{
-    display:flex;
-    flex-direction:row;
-    justify-content: space-between;
-}
-
-.tabs{
-    display:flex;
-    width: 400px;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 10px 0px;
 }
