@@ -13,7 +13,6 @@ export default class Search extends Component {
     }
     onChange=(value)=>{
         this.setState({ value });
-        console.log(this.state.value)
     }
     render() {
         return (
@@ -24,10 +23,13 @@ export default class Search extends Component {
             </div>
             
             <SearchInput onChange={this.onChange} value={this.state.value} />
-
-            <div className="suggestions">
-                suggestion
-            </div>
+            {
+                this.state.value.length && (
+                    <div className="suggestions">
+                        suggestion
+                    </div>
+                )
+            }
 
         </div>
         )
