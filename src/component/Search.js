@@ -8,7 +8,7 @@ export default class Search extends Component {
         super(props)
     
         this.state = {
-             value:""
+             value:"testing"
         }
     }
     onChange=(value)=>{
