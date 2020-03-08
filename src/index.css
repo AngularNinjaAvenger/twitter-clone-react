@@ -101,6 +101,7 @@ body{
     margin: 11px 3px;
     padding: 10px;
     border-radius: 10px;
+    overflow:hidden;
 }
 
 .result-link{
@@ -116,6 +117,14 @@ body{
     font-size: 21px;
     text-decoration: none;
 }
+
+.input-sug-wapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 
 .description-container{
     display: block;
@@ -148,7 +157,10 @@ body{
     font-weight: bolder;
     margin: 5px 0px;
     cursor:pointer;   
+    position:abosolute;
+    top:50px;
 }
+
 
 ::-webkit-scrollbar {
     width: 7.6px; 
