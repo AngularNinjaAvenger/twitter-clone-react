@@ -3,6 +3,22 @@ A twiter clone that supports sending out tweet, retweeting, liking and has dark 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Home
+[![Home](https://i.ibb.co/JQ0WJvN/home.png)](https://i.ibb.co/JQ0WJvN/home.png)
+
+### New Tweet
+[![New Tweet](https://i.ibb.co/XpNyj8P/new-tweet.png)](https://i.ibb.co/XpNyj8P/new-tweet.png)
+
+### Re Tweet
+[![Re Tweet](https://i.ibb.co/MCq47jx/retweet.png)](https://i.ibb.co/MCq47jx/retweet.png)
+
+### Dark Mode
+[![Re Tweet](https://i.ibb.co/W0zsV37/dark-mode.png)](https://i.ibb.co/W0zsV37/dark-mode.png)
+
+
+
+
+
 
 ## Installation
 
