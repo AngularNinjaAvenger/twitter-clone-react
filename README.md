@@ -1,6 +1,10 @@
 # twitter-clone-react
 A twiter clone that supports sending out tweet, retweeting, liking and has dark mode integrated into it . 
 
+# Live url
+
+https://twitter-clone-ana.netlify.app/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Home
